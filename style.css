@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Spacing Animation */
+
+.spacing-animation{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 62px;
+}
+.title_container{
+    display: flex;
+}
+.spacing-animation span{
+    color: slategray;
+    animation: titleAnim 3s forwards;
+}
+span.factory{
+    color: #eec549;
+}
+@keyframes titleAnim {
+    0%{
+        letter-spacing: 10px;
+    }
+    50%{
+        letter-spacing: 100px;
+        transform: skewX(0);
+    }
+    100%{
+        letter-spacing: 20px;
+        transform: skewX(-20deg);
+    }
+}
+
+/* End of Spacing Animation */
+
+/* Rotate Animation */
+
+.rotate-animation{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background-color: #1f1c1c;
+}
+.rotate-animation span{
+    color: slategray;
+    animation: 2s spin;
+    animation-delay: calc(0.1s * var(--i));
+}
+span.factory{
+    color: #eec549;
+}
+@keyframes rotateX {
+    0%{
+        transform: rotateX(90deg);
+    }
+}
+@keyframes spin {
+    0%{
+        transform: rotateY(360deg);
+    }
+}
+
+/* End of Rotate Animation */
+
+/* Color Animation */
+
+.color-animation{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background-color: #1f1c1c;
+}
+.color-animation span{
+    color: slategray;
+    animation: 5s color infinite, 2s wave;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes color {
+    0%{
+        color: lightslategray;
+    }
+    25%{
+        color: hotpink;
+    }
+    50%{
+        color: khaki;
+    }
+    100%{
+        color: lightblue;
+    }
+}
+
+@keyframes wave {
+    50%{
+        transform: scaleY(1.3);
+    }
+}
+
+/* End of Color Animation */
+
+/* Color Animation */
+
+.glow-effect{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background-color: #1f1c1c;
+}
+.glow-effect .title_container{
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    from{
+        color: #ccc;
+        text-shadow: 0 0 10px cyan;
+    }
+    to{
+        color: white;
+        text-shadow: 0 0 50px cyan;
+    }
+}
+
+/* End of Color Animation */
+
+/* Background Wave */
+.background-wave-effect{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background-color: #1f1c1c;
+    font-family: garamond, serif;
+}
+.wave::before{
+    animation: wave 6s infinite;
+    content: "Waterslide Cafe";
+    position: absolute;
+    color: lightblue;
+}
+.wave{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: lightblue;
+    color: transparent;
+}
+
+@keyframes wave {
+    0%,
+    100%{
+        clip-path: polygon(
+            0% 65%,
+            15% 49%,
+            32% 55%,
+            58% 69%,
+            69% 74%,
+            82% 89%,
+            94% 93%,
+            100% 100%,
+            0% 100%
+        );
+    }
+    50%{
+        clip-path: polygon(
+            0% 60%,
+            12% 65%,
+            31% 66%,
+            49% 62%,
+            57% 50%,
+            68% 45%,
+            100% 45%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+/* End of Background Wave */
